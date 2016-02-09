@@ -1,6 +1,6 @@
 require 'pry'
 
-class Rotator
+class Caesar
   attr_reader :shift, :input_text, :alphabet, :i
 
   def initialize(argv)
@@ -19,15 +19,17 @@ class Rotator
   end
 
   def encrypt_and_do_all_the_shit
+    return if @input_text.nil?
     blah = build_true_string.map do |letter|
       letter.downcase.tr(original_alphabet, offset_alphabet)
     end
     response = build_response(blah)
+
     output_the(response)
   end
 
   def build_response(blah)
-    response = blah.join(' ')
+    blah.join('')
   end
 
   def build_true_string
@@ -36,10 +38,10 @@ class Rotator
 
   def output_the(string)
     puts string
+    string
   end
 
 end
+rotator = Caesar.new(ARGV)
 
-rotator = Rotator.new(ARGV)
 rotator.encrypt_and_do_all_the_shit
-

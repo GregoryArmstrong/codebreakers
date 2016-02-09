@@ -1,6 +1,6 @@
 require 'pry'
 
-class Initials 
+class Initials
   attr_accessor :words
 
   def initialize(args)
@@ -11,7 +11,7 @@ class Initials
     string_of_initials = words.map do |word|
       word[0].upcase if word
     end
-    p string_of_initials.join(' ')
+    p string_of_initials.join('')
   end
 end
 
