@@ -1,20 +1,19 @@
 require 'pry'
 
-class CodeBreaker
+class Initials 
   attr_accessor :words
 
-  def initialize(word_one, word_two, word_three)
-    @words = [word_one, word_two, word_three]
+  def initialize(args)
+    @words = args
   end
 
-  def get_first_initial
-    @words.each do |word|
-      print word[0].upcase if word
+  def print_first_intials_only
+    string_of_initials = words.map do |word|
+      word[0].upcase if word
     end
+    p string_of_initials.join(' ')
   end
-  
 end
 
-
-code_breaker = CodeBreaker.new(ARGV[0], ARGV[1], ARGV[2])
-code_breaker.get_first_initial
+initials = Initials.new(ARGV)
+initials.print_first_intials_only
