@@ -1,5 +1,3 @@
-require 'pry'
-
 class Initials
   attr_accessor :words
 
